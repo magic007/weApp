@@ -1,0 +1,50 @@
+<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+<view class='content'></view>
+<form bindsubmit="doadd" bindreset="formReset">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">收货人：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="name" placeholder="" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系号码：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="phone" placeholder="" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input city">
+      <view class="weui-cell__hd">
+        <view class="weui-label">所在地区：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">详细地址：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="detailadd" placeholder="" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-btn-area">
+    <button class="weui-btn footer" formType="submit">添加</button>
+  </view>
+</form>
